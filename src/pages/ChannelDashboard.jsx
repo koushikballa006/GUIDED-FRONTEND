@@ -53,7 +53,7 @@ const ChannelDashboard = () => {
 
   const getAllGroups = async () => {
     const res = await fetch(
-      `http://localhost:8000/api/channels/getAllGroups/${channelId}`,
+      `https://guided-backend-1.onrender.com/api/channels/getAllGroups/${channelId}`,
       {
         method: "GET",
         headers: {
@@ -74,7 +74,7 @@ const ChannelDashboard = () => {
 
   const getAllUsersOfAChannel = async () => {
     const res = await fetch(
-      `http://localhost:8000/api/channels/getUsersOfChannel/${channelId}`,
+      `https://guided-backend-1.onrender.com/api/channels/getUsersOfChannel/${channelId}`,
       {
         method: "GET",
         headers: {

@@ -61,7 +61,7 @@ function UserProfile() {
     localStorage.removeItem("active-group-index");
     localStorage.removeItem("active-group-id");
 
-    const res = await fetch("http://localhost:8000/api/users/logout", {
+    const res = await fetch("https://guided-backend-1.onrender.com/api/users/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ function UserProfile() {
   useEffect(() => {
     const getUserById = async () => {
       const res = await fetch(
-        `http://localhost:8000/api/users/getUserById/${userId}`,
+        `https://guided-backend-1.onrender.com/api/users/getUserById/${userId}`,
         {
           method: "GET",
           headers: {

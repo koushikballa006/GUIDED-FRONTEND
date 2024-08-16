@@ -9,7 +9,7 @@ import GroupContext from "../contexts/GroupContext";
 import LoginContext from "../contexts/LoginContext";
 
 import { io } from "socket.io-client";
-const socket = io("http://localhost:8000", {
+const socket = io("https://guided-backend-1.onrender.com", {
   path: "/socket.io",
   autoConnect: false,
 });
@@ -186,7 +186,7 @@ const ChatBox = ({ channelId }) => {
   const getAllChats = async () => {
     if (!activeGroupId) return;
     const res = await fetch(
-      "http://localhost:8000/api/group/getAllChats/" + activeGroupId,
+      "https://guided-backend-1.onrender.com/api/group/getAllChats/" + activeGroupId,
       {
         method: "GET",
         headers: {

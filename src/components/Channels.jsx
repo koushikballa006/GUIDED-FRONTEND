@@ -26,7 +26,7 @@ const CreateChannel = () => {
       buttonRef.current.classList.remove("loading");
       return;
     }
-    const res = await fetch("http://localhost:8000/api/admin/createChannel", {
+    const res = await fetch("https://guided-backend-1.onrender.com/api/admin/createChannel", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const Channels = () => {
 
   const fetchChannelsId = useCallback(async () => {
     const response = await fetch(
-      "http://localhost:8000/api/channels/getAllChannels",
+      "https://guided-backend-1.onrender.com/api/channels/getAllChannels",
       {
         method: "GET",
         headers: {
@@ -166,7 +166,7 @@ const Channels = () => {
   const fetchChannelsData = useCallback(async () => {
     channelsId.forEach(async (channelId) => {
       const response = await fetch(
-        `http://localhost:8000/api/channels/getChannelById/${channelId}`,
+        `https://guided-backend-1.onrender.com/api/channels/getChannelById/${channelId}`,
         {
           method: "GET",
           headers: {
@@ -189,7 +189,7 @@ const Channels = () => {
       };
     if (role === "user") {
       const res = await fetch(
-        `http://localhost:8000/api/users/isUserInChannel/${channelId}`,
+        `https://guided-backend-1.onrender.com/api/users/isUserInChannel/${channelId}`,
         {
           method: "GET",
           headers: {
@@ -220,7 +220,7 @@ const Channels = () => {
 
   const handleJoinChannel = useCallback(async (channel) => {
     console.log(channel);
-    const res = await fetch(`http://localhost:8000/api/channels/joinChannel`, {
+    const res = await fetch(`https://guided-backend-1.onrender.com/api/channels/joinChannel`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

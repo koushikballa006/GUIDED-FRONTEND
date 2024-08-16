@@ -71,7 +71,7 @@ const Register = () => {
     try {
       // Proceed with registration
       const res = await fetch(
-        'http://localhost:8000/api/users/register',
+        'https://guided-backend-1.onrender.com/api/users/register',
         {
           method: 'POST',
           headers: {

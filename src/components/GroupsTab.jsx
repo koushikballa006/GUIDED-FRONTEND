@@ -29,7 +29,7 @@ const CreateGroup = ({ channelId }) => {
       buttonRef.current.classList.remove("loading");
       return alert("Please select the type of the group");
     }
-    const res = await fetch("http://localhost:8000/api/admin/createGroup", {
+    const res = await fetch("https://guided-backend-1.onrender.com/api/admin/createGroup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
