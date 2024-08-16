@@ -26,20 +26,23 @@ const CreateChannel = () => {
       buttonRef.current.classList.remove("loading");
       return;
     }
-    const res = await fetch("https://guided-backend-1.onrender.com/api/admin/createChannel", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "true",
-      },
-      body: JSON.stringify({
-        channelId: id,
-        name: name,
-        description: description,
-        imageUrl: url,
-      }),
-      credentials: "include",
-    });
+    const res = await fetch(
+      "https://guided-backend-1.onrender.com/api/admin/createChannel",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "true",
+        },
+        body: JSON.stringify({
+          channelId: id,
+          name: name,
+          description: description,
+          imageUrl: url,
+        }),
+        credentials: "include",
+      }
+    );
     const data = await res.json();
     console.log(data, res);
     buttonRef.current.classList.remove("loading");
@@ -220,17 +223,20 @@ const Channels = () => {
 
   const handleJoinChannel = useCallback(async (channel) => {
     console.log(channel);
-    const res = await fetch(`https://guided-backend-1.onrender.com/api/channels/joinChannel`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "true",
-      },
-      body: JSON.stringify({
-        channelId: channel.channelId,
-      }),
-      credentials: "include",
-    });
+    const res = await fetch(
+      `https://guided-backend-1.onrender.com/api/channels/joinChannel`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "true",
+        },
+        body: JSON.stringify({
+          channelId: channel.channelId,
+        }),
+        credentials: "include",
+      }
+    );
     const data = await res.json();
     console.log(data);
     if (data.message == "User joined the channel") {
