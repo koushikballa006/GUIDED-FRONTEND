@@ -138,7 +138,7 @@ const UserLogin = () => {
     const password = passwordRef.current.value;
 
     if (!email || !password) return alert("Please enter all the fields");
-    const res = await fetch("http://localhost:8000/api/users/login", {
+    const res = await fetch("https://guided-backend-1.onrender.com/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
